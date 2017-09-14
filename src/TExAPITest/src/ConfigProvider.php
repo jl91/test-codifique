@@ -21,7 +21,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'templates'    => $this->getTemplates(),
+            'templates' => $this->getTemplates(),
         ];
     }
 
@@ -34,10 +34,10 @@ class ConfigProvider
     {
         return [
             'invokables' => [
-
             ],
-            'factories'  => [
-                Action\HomePageAction::class => Action\HomePageFactory::class,
+            'factories' => [
+                Action\HomePageAction::class => Action\ActionWithContainerFactory::class,
+                Action\CarsAction::class => Action\ActionWithContainerFactory::class,
             ],
         ];
     }
@@ -51,8 +51,8 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'app'    => [__DIR__ . '/../templates/app'],
-                'error'  => [__DIR__ . '/../templates/error'],
+                'app' => [__DIR__ . '/../templates/app'],
+                'error' => [__DIR__ . '/../templates/error'],
                 'layout' => [__DIR__ . '/../templates/layout'],
             ],
         ];

@@ -2,29 +2,31 @@
 
 namespace TExAPITest\Model\Database\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Hateoas\Configuration\Annotation as Hateoas;
 
 /**
  * Class CarEntity
  * @package TExAPITest\Model\Database\Entity
- * @ORM\table('cars')
+ * @ORM\Entity
+ * @ORM\Table(name="cars")
  */
 class CarsEntity
 {
     /**
-     * @var
      * @ORM\id
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var
-     * @ORM\column(type="string")
+     * @ORM\column(name="model", type="string", nullable=false)
      */
     private $model;
 
     /**
-     * @var
-     * @ORM\column(type="integer")
+     * @ORM\Column(name="fk_auto", type="integer", nullable=false)
      */
     private $auto;
 

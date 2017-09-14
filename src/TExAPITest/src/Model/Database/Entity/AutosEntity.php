@@ -2,31 +2,31 @@
 
 namespace TExAPITest\Model\Database\Entity;
 
-use Doctrine\ORM\Mapping\Annotation as ORM;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Class AutosEntity
  * @package TExAPITest\Model\Database\Entity
- * @ORM\table('autos')
+ * @ORM\Entity
+ * @ORM\table(name="autos")
  */
 class AutosEntity
 {
 
     /**
-     * @var
      * @ORM\id
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var
-     * @ORM\column(type="string")
+     * @ORM\column(name="plate", type="string", nullable=false)
      */
     private $placa;
 
     /**
-     * @var
-     * @ORM\column(type="integer")
+     * @ORM\column(name="wheels", type="string", nullable=false)
      */
     private $rodas;
 
