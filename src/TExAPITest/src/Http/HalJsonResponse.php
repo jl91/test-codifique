@@ -2,26 +2,26 @@
 
 namespace TExAPITest\Http;
 
+use Hateoas\HateoasBuilder;
+use Zend\Diactoros\Response;
 
-use Zend\Diactoros\Response\JsonResponse;
 
-final class HalJsonResponse extends JsonResponse
+final class HalJsonResponse extends Response
 {
-    public function __construct($data, $status = 200, $headers = [], $encodingOptions = self::DEFAULT_JSON_FLAGS)
+    public function __construct($data, $status = 200, $headers = [])
     {
-
         $headers = array_merge($headers, [
             'Content-Type' => 'application/hal+json'
         ]);
 
-        $data = $this->serializeData($data);
-
-        parent::__construct($data, $status, $headers, $encodingOptions);
+        $body = $this->parseBody($data);
+        parent::__construct($body, $status, $headers);
     }
 
-    private function serializeData($data)
+    public function parseBody(array $data = [])
     {
-        return $data;
+        $hateoas = HateoasBuilder::create()->build();
+        return $hateoas->serialize($data, 'json');
     }
 
 }

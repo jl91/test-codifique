@@ -1,3 +1,3 @@
 <?php
 
-$app->get('/', App\Action\HomePageAction::class, 'home');
+$app->get('/', TExAPITest\Action\HomePageAction::class, 'home');

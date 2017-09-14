@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace TExAPITest;
 
 /**
  * The configuration provider for the App module
@@ -34,7 +34,7 @@ class ConfigProvider
     {
         return [
             'invokables' => [
-                Action\PingAction::class => Action\PingAction::class,
+
             ],
             'factories'  => [
                 Action\HomePageAction::class => Action\HomePageFactory::class,
