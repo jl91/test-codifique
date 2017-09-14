@@ -11,6 +11,7 @@
         "php": "^7.0",
         "doctrine/orm": "^2.5.5",
         "roave/security-advisories": "dev-master",
+        "willdurand/Hateoas": "^2.11",
         "zendframework/zend-component-installer": "^1.0",
         "zendframework/zend-config-aggregator": "^1.0",
         "zendframework/zend-expressive": "^2.0.2",
