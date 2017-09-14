@@ -55,6 +55,11 @@
     "test": "phpunit --colors=always",
     "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
     "upload-coverage": "coveralls -v",
-    "migrations": "php ./vendor/bin/doctrine-migrations"
+    "migrations-generate": "php ./migrations/migrations.php migrations:generate --configuration ./migrations/migrations.xml",
+    "migrations-execute": "php ./migrations/migrations.php migrations:execute --configuration ./migrations/migrations.xml",
+    "migrations-latest": "php ./migrations/migrations.php migrations:latest --configuration ./migrations/migrations.xml",
+    "migrations-migrate": "php ./migrations/migrations.php migrations:migrate --configuration ./migrations/migrations.xml",
+    "migrations-status": "php ./migrations/migrations.php migrations:status --configuration ./migrations/migrations.xml",
+    "migrations-version": "php ./migrations/migrations.php migrations:version --configuration ./migrations/migrations.xml"
   }
 }

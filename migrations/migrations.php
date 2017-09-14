@@ -69,7 +69,7 @@ $cli->setCatchExceptions(true);
 $cli->setHelperSet($helperSet);
 
 // Add Migrations commands
-$commands = array();
+$commands = [];
 $commands[] = new Command\ExecuteCommand();
 $commands[] = new Command\GenerateCommand();
 $commands[] = new Command\LatestCommand();
